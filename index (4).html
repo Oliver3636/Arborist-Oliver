@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arborist Oliver — Trädvård och trädfällning på Orust och Tjörn</title>
+<meta name="description" content="Erfaren arborist på Orust, Tjörn och i övriga Bohuslän. Trädfällning, trädvård, beskärning av fruktträd, häckklippning och stubbfräsning.">
+
+<style>
+
+  /* ============================================================
+     EDIT GUIDE
+     - Text: search for the Swedish words you want to change and
+       type over them directly in this file.
+     - Photos: replace files inside the /images folder, keeping
+       the same filenames, OR change the filenames below in the
+       <img src="images/..."> tags.
+     - Colors: change the two values under :root below.
+     ============================================================ */
+
+  :root{
+    --olive: #6E8A5B;
+    --olive-dark: #57704A;
+    --olive-pale: #EEF1E9;
+    --white: #FFFFFF;
+    --ink: #2B2E28;
+    --ink-soft: #5B5F56;
+    --line: #DDE3D6;
+    --max: 1120px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--white);
+    color: var(--ink);
+    font-family: "Söhne", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+
+  h1,h2,h3{
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header{
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    z-index: 50;
+  }
+
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 22px 0;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+  }
+  .brand-logo{
+    height: 52px;
+    width: auto;
+    display:block;
+  }
+
+  .links{
+    display:flex;
+    align-items:center;
+    gap: 40px;
+    list-style: none;
+    margin:0; padding:0;
+  }
+  .links li{ list-style: none; }
+  .links a{
+    text-decoration:none;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    color: var(--ink-soft);
+    transition: color 0.15s ease;
+  }
+  .links a:hover{ color: var(--olive-dark); }
+
+  .nav-cta{
+    display:inline-flex;
+    align-items:center;
+    background: var(--olive);
+    color: var(--white) !important;
+    padding: 11px 24px;
+    border-radius: 2px;
+    text-decoration:none;
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .nav-cta:hover{ background: var(--olive-dark); }
+
+  .menu-toggle{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    width: 40px;
+    height: 40px;
+    background:none;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    cursor:pointer;
+    padding: 0;
+    flex-direction: column;
+    gap: 5px;
+    transition: border-color 0.15s ease;
+  }
+  .menu-toggle:hover{ border-color: var(--olive); }
+  .menu-toggle span{
+    display:block;
+    width: 18px;
+    height: 1.5px;
+    background: var(--ink);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero{
+    padding: 96px 0 88px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+    margin-bottom: 18px;
+  }
+  .hero h1{
+    font-size: clamp(2.1rem, 4vw, 3.1rem);
+    line-height: 1.15;
+    max-width: 14ch;
+  }
+  .hero p{
+    margin-top: 22px;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 42ch;
+  }
+  .hero-actions{
+    margin-top: 34px;
+    display:flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-block;
+    text-decoration:none;
+    padding: 13px 26px;
+    border-radius: 3px;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary{
+    background: var(--olive);
+    color: var(--white);
+  }
+  .btn-primary:hover{ background: var(--olive-dark); }
+  .btn-secondary{
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .btn-secondary:hover{ border-color: var(--olive); }
+
+  .hero-photo{
+    position:relative;
+  }
+  .hero-photo img{
+    width:100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 4px;
+    display:block;
+  }
+
+  /* ---------- Section shells ---------- */
+
+  section{ padding: 88px 0; }
+  section.alt{ background: var(--olive-pale); }
+  .section-head{
+    margin-bottom: 48px;
+    max-width: 56ch;
+  }
+  .section-eyebrow{
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--olive-dark);
+    margin-bottom: 12px;
+  }
+  .section-head h2{
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  }
+  .section-head p{
+    margin-top: 14px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Services ---------- */
+
+  .services-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 64px;
+    max-width: 860px;
+  }
+  .services-list .svc h3{
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .services-list .svc p{
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0;
+    margin-top: 8px;
+  }
+
+  /* ---------- Gallery ---------- */
+
+  .gallery-strip{
+    display:flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x proximity;
+    padding: 8px 0 24px;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery-strip:active{ cursor: grabbing; }
+  .gallery-strip::-webkit-scrollbar{ height: 3px; }
+  .gallery-strip::-webkit-scrollbar-track{ background: var(--line); }
+  .gallery-strip::-webkit-scrollbar-thumb{ background: var(--olive); border-radius: 2px; }
+
+  .gallery-strip figure{
+    flex: 0 0 auto;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    scroll-snap-align: start;
+    cursor: pointer;
+  }
+  /* Alternating heights for rhythm */
+  .gallery-strip figure:nth-child(3n+1){ height: 420px; }
+  .gallery-strip figure:nth-child(3n+2){ height: 340px; align-self: flex-end; }
+  .gallery-strip figure:nth-child(3n)  { height: 380px; align-self: center; }
+
+  .gallery-strip figure::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: rgba(43,46,40,0);
+    transition: background 0.2s ease;
+  }
+  .gallery-strip figure:hover::after{ background: rgba(43,46,40,0.15); }
+
+  .gallery-strip img{
+    height: 100%;
+    width: auto;
+    display:block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .gallery-strip figure:hover img{ transform: scale(1.03); }
+
+  .gallery-hint{
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .gallery-hint::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background: var(--line);
+  }
+  .gallery-arrow{
+    display:inline-block;
+    animation: nudge 1.8s ease-in-out infinite;
+  }
+  @keyframes nudge{
+    0%,100%{ transform: translateX(0); }
+    50%{ transform: translateX(5px); }
+  }
+
+  /* Lightbox */
+  .lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background: rgba(20,22,18,0.96);
+    z-index: 200;
+    align-items:center;
+    justify-content:center;
+    padding: 32px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  }
+  .lightbox-close{
+    position:absolute;
+    top: 24px;
+    right: 28px;
+    background:none;
+    border:none;
+    color: rgba(255,255,255,0.7);
+    font-size: 2rem;
+    cursor:pointer;
+    line-height:1;
+    transition: color 0.15s ease;
+  }
+  .lightbox-close:hover{ color: #fff; }
+  .lightbox-prev,
+  .lightbox-next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.8);
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: background 0.15s ease;
+  }
+  .lightbox-prev:hover,
+  .lightbox-next:hover{ background: rgba(255,255,255,0.18); }
+  .lightbox-prev{ left: 20px; }
+  .lightbox-next{ right: 20px; }
+
+  /* ---------- About ---------- */
+
+  .about{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 64px;
+    align-items:center;
+  }
+  .about img{
+    width:100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .about h2{ font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+  .about p{
+    color: var(--ink-soft);
+    margin-top: 18px;
+  }
+  .about-facts{
+    margin-top: 28px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .about-facts div{
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .about-facts strong{
+    display:block;
+    font-family: Georgia, serif;
+    font-size: 1.3rem;
+    color: var(--olive-dark);
+  }
+  .about-facts span{
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Contact ---------- */
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+  .contact-info h2{ font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+  .contact-info p{ color: var(--ink-soft); margin-top: 14px; }
+  .contact-list{
+    margin-top: 28px;
+    list-style:none;
+    padding:0;
+  }
+  .contact-list li{
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    font-size: 0.95rem;
+  }
+  .contact-list span:first-child{ color: var(--ink-soft); }
+  .contact-list a{ text-decoration:none; color: var(--ink); }
+  .contact-list a:hover{ color: var(--olive-dark); }
+
+  form{
+    display:flex;
+    flex-direction:column;
+    gap: 16px;
+  }
+  label{
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    display:block;
+  }
+  input, textarea{
+    width:100%;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--white);
+  }
+  input:focus, textarea:focus{
+    outline: none;
+    border-color: var(--olive);
+  }
+  textarea{ resize: vertical; min-height: 120px; }
+  form .btn-primary{
+    border:none;
+    cursor:pointer;
+    align-self: flex-start;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 36px 0;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .footer-inner a{ text-decoration:none; }
+  .footer-inner a:hover{ color: var(--olive-dark); }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 880px){
+    .links, .nav-cta{ display:none; }
+    .menu-toggle{ display:flex; }
+    .hero-inner{ grid-template-columns: 1fr; gap: 40px; }
+    .hero-photo img{ height: 360px; }
+    .services-list{ grid-template-columns: 1fr; gap: 28px; }
+    .about{ grid-template-columns: 1fr; }
+    .about img{ height: 320px; }
+    .contact-grid{ grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 540px){
+    .hero{ padding: 64px 0 56px; }
+    section{ padding: 64px 0; }
+    .about-facts{ grid-template-columns: 1fr; }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="images/logo-full.svg" alt="Arborist Oliver" class="brand-logo">
+    </a>
+    <ul class="links">
+      <li><a href="#tjanster">Tjänster</a></li>
+      <li><a href="#om">Om</a></li>
+      <li><a href="#galleri">Galleri</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="#kontakt">Boka kostnadsfri offert</a>
+    <button class="menu-toggle" aria-label="Meny" onclick="document.querySelector('.links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-eyebrow">Orust, Tjörn & Bohuslän</div>
+      <h1>Trädfällning och beskärning</h1>
+      <p>Erfaren arborist med uppdrag hos privatpersoner och företag på Orust, Tjörn och i övriga Bohuslän. Trädfällning, beskärning och fruktträdsbeskärning.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#kontakt">Boka kostnadsfri offert</a>
+        <a class="btn btn-secondary" href="#tjanster">Se tjänster</a>
+      </div>
+      <div class="about-facts" style="margin-top: 32px; max-width: 320px;">
+        <div>
+          <strong>50 % RUT-avdrag</strong>
+          <span>Skattereduktion på arbetskostnaden</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/hero-professional.jpg" alt="Arborist i trädtopp">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="tjanster">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Tjänster</div>
+      <h2>Vad jag hjälper till med</h2>
+    </div>
+    <div class="services-list">
+      <div class="svc">
+        <h3>Trädfällning</h3>
+        <p>Säker fällning av träd, även i trånga eller känsliga lägen.</p>
+      </div>
+      <div class="svc">
+        <h3>Sektionsfällning</h3>
+        <p>Klättring och riggning i träd som står över byggnader, staket eller andra känsliga ytor — varje del sänks ned kontrollerat utan att skada omgivningen.</p>
+      </div>
+      <div class="svc">
+        <h3>Beskärning</h3>
+        <p>Formering och beskärning anpassad efter trädets behov.</p>
+      </div>
+      <div class="svc">
+        <h3>Fruktträdsbeskärning</h3>
+        <p>Erfaren beskärning av äppel-, päron- och plommonträd för trädets hälsa och form.</p>
+      </div>
+      <div class="svc">
+        <h3>Häckklippning</h3>
+        <p>Klippning och formning av häckar i alla storlekar.</p>
+      </div>
+      <div class="svc">
+        <h3>Trädvård</h3>
+        <p>Löpande skötsel för friska och stabila träd över tid.</p>
+      </div>
+      <div class="svc">
+        <h3>Bortforsling</h3>
+        <p>Bortforsling av ris och stockar. Vi erbjuder även stubbfräsning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="galleri" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Galleri</div>
+      <h2>Från jobb i Bohuslän</h2>
+    </div>
+    <div class="gallery-hint">Scrolla för fler bilder <span class="gallery-arrow">→</span></div>
+  </div>
+  <div class="gallery-strip" id="gallery">
+    <figure onclick="openLightbox(0)"><img src="images/g-rigging-branch-fall.jpg" alt="Riggad gren i luften"></figure>
+    <figure onclick="openLightbox(1)"><img src="images/coast-view.jpg" alt="Utsikt över Bohuslän från trädtopp"></figure>
+    <figure onclick="openLightbox(2)"><img src="images/g-churchyard-wide.jpg" alt="Kyrkogårdsträd, Bohuslän"></figure>
+    <figure onclick="openLightbox(3)"><img src="images/g-climb-thumbsup.jpg" alt="Oliver i trädtopp"></figure>
+    <figure onclick="openLightbox(4)"><img src="images/g-pov-garden.jpg" alt="POV nedåt från trädtopp över trädgård"></figure>
+    <figure onclick="openLightbox(5)"><img src="images/prune-oak-winter.jpg" alt="Beskärning av ek på vintern"></figure>
+    <figure onclick="openLightbox(6)"><img src="images/g-sawing-branch.jpg" alt="Sågning i trädtopp"></figure>
+    <figure onclick="openLightbox(7)"><img src="images/g-elm-climb-blue.jpg" alt="Klättring i alm mot blå himmel"></figure>
+    <figure onclick="openLightbox(8)"><img src="images/g-snow-felling.jpg" alt="Trädfällning i vinterskogen"></figure>
+    <figure onclick="openLightbox(9)"><img src="images/g-pine-topping-house.jpg" alt="Talltopping vid hus"></figure>
+    <figure onclick="openLightbox(10)"><img src="images/g-churchyard-aerial.jpg" alt="Vy över kyrkogård från trädtopp"></figure>
+    <figure onclick="openLightbox(11)"><img src="images/about-climbing-prev.jpg" alt="Oliver i trädtopp"></figure>
+    <figure onclick="openLightbox(12)"><img src="images/g-stripped-trunk.jpg" alt="Avgrenad stam vid hus"></figure>
+    <figure onclick="openLightbox(13)"><img src="images/g-section-felling-summer.jpg" alt="Sektionsfällning sommar"></figure>
+    <figure onclick="openLightbox(14)"><img src="images/g-oak-pruning-wide.jpg" alt="Bred ek under beskärning"></figure>
+    <figure onclick="openLightbox(15)"><img src="images/g-climb-pine-close.jpg" alt="Klättring i tall närbild"></figure>
+    <figure onclick="openLightbox(16)"><img src="images/topping-pine.jpg" alt="Toppning av tall"></figure>
+    <figure onclick="openLightbox(17)"><img src="images/g-elm-pruning.jpg" alt="Klättring vid almstump"></figure>
+    <figure onclick="openLightbox(18)"><img src="images/g-climb-house.jpg" alt="Klättring vid hus"></figure>
+    <figure onclick="openLightbox(19)"><img src="images/pov-canopy.jpg" alt="Vy nedåt under arbete i träd"></figure>
+    <figure onclick="openLightbox(20)"><img src="images/g-climb-tall-tree.jpg" alt="Hög tall vid hus"></figure>
+    <figure onclick="openLightbox(21)"><img src="images/prune-appletree-1.jpg" alt="Beskärning av fruktträd"></figure>
+    <figure onclick="openLightbox(22)"><img src="images/prune-park-tree.jpg" alt="Beskärning av park- och gatuträd"></figure>
+    <figure onclick="openLightbox(23)"><img src="images/g-chipper-scene.jpg" alt="Flismaskin och maskiner på jobb"></figure>
+    <figure onclick="openLightbox(24)"><img src="images/prune-appletree-2.jpg" alt="Beskuret äppelträd"></figure>
+    <figure onclick="openLightbox(25)"><img src="images/g-oliver-hedge.jpg" alt="Oliver med häcksax"></figure>
+    <figure onclick="openLightbox(26)"><img src="images/g-hedge-finished.jpg" alt="Klippt häck med havsvy"></figure>
+    <figure onclick="openLightbox(27)"><img src="images/chainsaw-stump.jpg" alt="Motorsåg på stubbe"></figure>
+  </div>
+  <!-- ADD MORE PHOTOS: upload image to /images folder, copy a <figure> line, update filename and increment the index number -->
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">&#8249;</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)">&#8250;</button>
+</div>
+
+<script>
+  const galleryImgs = Array.from(document.querySelectorAll('#gallery figure img'));
+  let current = 0;
+
+  function openLightbox(i){
+    current = i;
+    document.getElementById('lightbox-img').src = galleryImgs[i].src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e){
+    if(e && e.target !== document.getElementById('lightbox') && e.target.className !== 'lightbox-close') return;
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function shiftLightbox(dir){
+    current = (current + dir + galleryImgs.length) % galleryImgs.length;
+    document.getElementById('lightbox-img').src = galleryImgs[current].src;
+  }
+  document.addEventListener('keydown', e => {
+    if(!document.getElementById('lightbox').classList.contains('open')) return;
+    if(e.key === 'ArrowRight') shiftLightbox(1);
+    if(e.key === 'ArrowLeft') shiftLightbox(-1);
+    if(e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+  });
+
+  // Drag to scroll
+  const strip = document.getElementById('gallery');
+  let isDown = false, startX, scrollLeft;
+  strip.addEventListener('mousedown', e => {
+    isDown = true; startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft;
+  });
+  strip.addEventListener('mouseleave', () => isDown = false);
+  strip.addEventListener('mouseup', () => isDown = false);
+  strip.addEventListener('mousemove', e => {
+    if(!isDown) return;
+    e.preventDefault();
+    strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX);
+  });
+</script>
+
+<!-- ============ ABOUT ============ -->
+<section id="om">
+  <div class="wrap about">
+    <img src="images/about-portrait.jpg" alt="Oliver i arbete">
+    <div>
+      <h2>Om Arborist Oliver</h2>
+      <p>Erfaren och noggrann arborist för alla typer av uppdrag — från enstaka träd till större projekt. Med många år anställd på stora företag i Sverige driver jag nu mitt eget bolag. Jag är väl inläst i branschen och van att lösa alla typer av situationer, stora som små.</p>
+      <p>Jag har arbetat i många av västra Sveriges kommuner samt i ett flertal historiska kyrkogårdsträd. Min pappa driver ett trädvårdsbolag i Storbritannien, så trädarbete ligger i familjen.</p>
+      <p>Några av de foton du ser här är från en fotografering jag gjorde för Hestra handskar. Jag har även medverkat i reklam för Husqvarna och Fristads workwear.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="kontakt" class="alt">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h2>Kontakt</h2>
+      <p>Hör av dig för en offert eller om du har frågor om ett jobb.</p>
+      <div class="about-facts" style="margin-bottom: 28px;">
+        <div>
+          <strong>50 % RUT-avdrag</strong>
+          <span>Skattereduktion på arbetskostnaden</span>
+        </div>
+      </div>
+      <ul class="contact-list">
+        <li><span>E-post</span><a href="mailto:oliver.arb@outlook.com">oliver.arb@outlook.com</a></li>
+        <li><span>Telefon</span><a href="tel:+46704188005">0704188005</a></li>
+      </ul>
+    </div>
+
+    <!-- Netlify form: once this site is deployed on Netlify, submissions
+         from this form are captured automatically and can be forwarded
+         to your email from the Netlify dashboard (Site settings > Forms). -->
+    <form action="https://formspree.io/f/mojgwnpz" method="POST">
+      <div>
+        <label for="namn">Namn</label>
+        <input type="text" id="namn" name="namn" required>
+      </div>
+      <div>
+        <label for="epost">E-post</label>
+        <input type="email" id="epost" name="epost" required>
+      </div>
+      <div>
+        <label for="meddelande">Meddelande</label>
+        <textarea id="meddelande" name="meddelande" required></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Skicka</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>Arborist Oliver · Orust & Tjörn</span>
+    <a href="mailto:oliver.arb@outlook.com">oliver.arb@outlook.com</a>
+  </div>
+</footer>
+
+<style>
+  @media (max-width: 880px){
+    .links.open{
+      display:flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--line);
+      gap: 20px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+    }
+  }
+</style>
+
+</body>
+</html>
